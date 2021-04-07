@@ -18,4 +18,9 @@ describe('Car',  ()=>{
         const car = new Car();
         assert.strictEqual(car.park(),'stopped');
     })
+
+    it('can drive',()=>{
+        const car = new Car();
+        assert.strictEqual(car.drive(),'vroom');
+    })
 })
