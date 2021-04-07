@@ -12,3 +12,10 @@ class Car{
         return "vroom";
     }
 }
+
+describe('Car',  ()=>{
+    it('can park',()=>{
+        const car = new Car();
+        assert.strictEqual(car.park(),'stopped');
+    })
+})
