@@ -17,6 +17,11 @@ let car;
 
 beforeEach(()=>{
     car = new Car();
+    // Get a list of all accounts
+    web3.eth.getAccounts()// return promise
+    .then(fetchedAccounts =>{
+        console.log(fetchedAccounts);
+    });
 })
 
 describe('Car',  ()=>{
