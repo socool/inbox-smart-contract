@@ -14,14 +14,14 @@ class Car{
 }
 
 let car;
+let accounts;
 
-beforeEach(()=>{
+beforeEach(async ()=>{
     car = new Car();
     // Get a list of all accounts
-    web3.eth.getAccounts()// return promise
-    .then(fetchedAccounts =>{
-        console.log(fetchedAccounts);
-    });
+    accounts = await web3.eth.getAccounts();
+    // Use one of those accounts to deploy
+    // the contract
 })
 
 describe('Car',  ()=>{
@@ -32,4 +32,10 @@ describe('Car',  ()=>{
     it('can drive',()=>{
         assert.strictEqual(car.drive(),'vroom');
     })
+})
+
+describe('Inbox',()=>{
+    it('deploys a contract', ()=>{
+        console.log(accounts);
+    });
 })
